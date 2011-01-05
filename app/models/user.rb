@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   
   has_friendly_id :name, :use_slug => true
+  has_attached_file :image
+  has_attached_file :video
   
   def self.create_with_omniauth(auth)
     create! do |user|
