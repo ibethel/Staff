@@ -10,21 +10,19 @@
       </ul>
     </div>
   <% end %>
+	<div class="right bubble">
+		<%= image_tag(@user.image.url(:medium))%>
+	</div>
+	<div class="field">
+		<%= f.label :video, "Upload a Video" %><br />
+		<%= f.file_field :video %>
+	</div>
+	<div class="field">
+		<%= f.label :image, "Upload an Image" %><br />
+		<%= f.file_field :image %>
+	</div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :video %><br />
-    <%= f.file_field :video %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br />
-    <%= f.file_field :image %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<div class="actions">
+		<%= submit_tag "Update Profile" %>
+	</div>
 <% end %>

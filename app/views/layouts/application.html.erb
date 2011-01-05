@@ -9,6 +9,7 @@
 </head>
 <body>
 	<div id="wrapper">
+		<h1 id="logo"><%= link_to "Bethel Church Staff", root_path %></h1>
 		<div id="authentication">
 			<% if current_user %>
 				Welcome, <%= link_to current_user.name, profile_path(current_user) %> | <%= link_to "Sign Out", signout_path %>

@@ -5,6 +5,22 @@ body
 	margin:0 auto;
 }
 
+.right
+{
+	float:right;
+}
+
+.left
+{
+	float:left;
+}
+
+.clear
+{
+	clear:both;
+}
+
+
 div#authentication
 {
 	background:#3399CC;
@@ -21,24 +37,41 @@ div#authentication
 	}
 }
 
+
+.bubble
+{
+	background:#fff;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px #888;
+	box-shadow: 0 0 5px #888;
+	-moz-border-radius: 15px;
+	border-radius: 7px;
+	margin:20px;
+	padding:20px;
+	text-align:center;
+	width:150px;
+}
+
+
 div#wrapper
 {
-	margin:100px auto;
+	
+	h1#logo
+	{
+		a
+		{
+			color:#222;
+			text-decoration:none;
+		}
+	}
+	
+	margin:80px auto;
 	width:90%;
 	
-	div.single-user
+	div.single-user, .profile-page
 	{
-		background:#fff;
-		-moz-box-shadow: 0 0 5px #888;
-		-webkit-box-shadow: 0 0 5px #888;
-		box-shadow: 0 0 5px #888;
-		-moz-border-radius: 15px;
-		border-radius: 7px;
+		.bubble;
 		float:left;
-		margin:20px;
-		padding:20px;
-		text-align:center;
-		width:150px;
 
 		div.user-name
 		{
@@ -52,7 +85,55 @@ div#wrapper
 				text-decoration:none;
 			}
 		}
+	}
+	
+	.profile-page
+	{
+		width:300px;
+	}
+}
 
 
+form
+{
+	label
+	{
+		font-weight:bold;
+	}
+	
+	div.field
+	{
+		background:#f8f8f8;
+		margin:10px 0;
+	}
+	
+	div.actions
+	{
+		margin:50px 0;
+	}
+	
+	input[type=submit]
+	{
+		background: #3399CC;
+		background: -moz-linear-gradient(0% 100% 90deg,#5288E5, #3399CC);
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5288E5), to(#3399CC));
+		border: 1px solid #5288E5;
+		border-width: 1px 1px 0 1px;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		-moz-box-shadow: inset 0 1px 0 0 #3399CC;
+		-webkit-box-shadow: inset 0 1px 0 0 #3399CC;
+		box-shadow: inset 0 1px 0 0 #3399CC;
+		color: #fff !important;
+		cursor:pointer;
+		font-family: "lucida grande", sans-serif;
+		font-size: 11px;
+		font-weight: bold;
+		line-height: 1;
+		padding: 7px;
+		text-align: center;
+		text-decoration:none;
+		text-shadow: 0 -1px 0 #4c9021;
 	}
 }
