@@ -28,17 +28,22 @@ body
 
 div#authentication
 {
-	background:url('/images/img-hr.png') repeat-x center;
+	border-bottom:1px solid #e8e8e8;
 	-moz-border-radius: 10px;
 	border-bottom-left: 10px;
-	color:#fff;
+	color:#999;
 	padding:10px;
-	
+	text-align:right;
 	a
 	{
-		color:#333;
+		color:#666;
 		font-weight:bold;
 		text-decoration:none;
+	}
+	
+	a:hover
+	{
+		color:#00CCFF;
 	}
 }
 
@@ -63,15 +68,18 @@ div#wrapper
 	
 	h1#logo
 	{
+		font-family: 'Droid Sans', arial, serif;
+		font-size:3em;
+		
 		a
 		{
-			color:#222;
+			color:#666;
 			text-decoration:none;
 		}
 	}
 	
 	margin:80px auto;
-	width:960px;
+	width:940px;
 	
 	div.single-user, .profile-page
 	{
@@ -192,5 +200,15 @@ form
 		-webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
 		box-shadow: inset 0 0 1px 1px #e3e3e3;
 		color: #000;
+	}
+	
+	div.field_with_errors
+	{
+		display:inline;
+		
+		input
+		{
+			background:#FFCCCC;
+		}
 	}
 }
