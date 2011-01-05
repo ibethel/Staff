@@ -1,3 +1,13 @@
-<% @users.each do |user| %>
-	<%= render partial: "users/single", locals: { user: user } %>
-<% end %>
+<div id="all-staff-list">
+	<% @users.each do |user| %>
+		<div class="single-user">
+			<div class="video-screenshot">
+				<%= link_to(image_tag(user.image.url(:medium)), user) %>
+			</div>
+			<div class="user-name">
+				<%= link_to user.name, user %>
+			</div>
+		</div>
+	<% end %>
+</div>
+<div class="clear"></div>

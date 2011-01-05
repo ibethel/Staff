@@ -1,1 +1,43 @@
-body { background: #007da7; }
+body {
+  background: #f5f6f7;
+  font-size: 0.9em;
+  margin: 0 auto;
+}
+div#authentication {
+  background: #3399cc;
+  -moz-border-radius: 10px;
+  border-bottom-left: 10px;
+  color: #ffffff;
+  padding: 10px;
+}
+div#authentication a {
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+div#wrapper {
+  margin: 100px auto;
+  width: 90%;
+}
+div#wrapper div.single-user {
+  background: #ffffff;
+  -moz-box-shadow: 0 0 5px #888888;
+  -webkit-box-shadow: 0 0 5px #888888;
+  box-shadow: 0 0 5px #888888;
+  -moz-border-radius: 15px;
+  border-radius: 7px;
+  float: left;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 150px;
+}
+div#wrapper div.single-user div.user-name {
+  color: #333333;
+  font-family: 'Kristi', arial, serif;
+  font-size: 1.9em;
+}
+div#wrapper div.single-user div.user-name a {
+  color: #333333;
+  text-decoration: none;
+}
