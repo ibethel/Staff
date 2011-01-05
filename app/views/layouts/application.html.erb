@@ -17,7 +17,13 @@
 				<%= link_to "Sign in", "/auth/google_apps" %>
 			<% end %>
 		</div>
-	
+		
+		<% if flash[:notice] %>
+			<div id="messages">
+			<%= flash[:notice] %>
+			</div>
+		<% end%>
+		
 		<%= yield %>
 	</div>
 </body>

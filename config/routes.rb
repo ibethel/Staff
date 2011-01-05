@@ -5,4 +5,7 @@ Staff::Application.routes.draw do
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", :as => :signout
   match "/profile/:id" => "users#edit", :as => :profile
+  
+  # Handle routing errors (THIS MUST BE AT THE END OF THE FILE)
+  match '*a', :to => 'errors#render_404'
 end

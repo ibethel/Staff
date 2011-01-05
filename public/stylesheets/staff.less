@@ -1,6 +1,7 @@
 body
 {
 	background:#F5F6F7;
+	font-family: 'Droid Sans', arial, serif;
 	font-size:0.9em;
 	margin:0 auto;
 }
@@ -25,6 +26,11 @@ body
 	clear:both;
 }
 
+.center
+{
+	text-align:center;
+}
+
 
 div#authentication
 {
@@ -47,6 +53,14 @@ div#authentication
 	}
 }
 
+div#messages
+{
+	background:#FFFFCC;
+	color:#222;
+	font-weight:bold;
+	margin:10px 0;
+	padding:10px;
+}
 
 .bubble
 {
@@ -68,7 +82,6 @@ div#wrapper
 	
 	h1#logo
 	{
-		font-family: 'Droid Sans', arial, serif;
 		font-size:3em;
 		
 		a
@@ -116,7 +129,7 @@ div#wrapper
 	div.bio
 	{
 		line-height:1.4em;
-		margin:10px;
+		margin:20px 0;
 		width:450px;
 		
 		h2, h4
@@ -124,8 +137,6 @@ div#wrapper
 			margin:0;
 			padding:0;
 		}
-		
-		
 	}
 }
 
@@ -200,6 +211,15 @@ form
 		-webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
 		box-shadow: inset 0 0 1px 1px #e3e3e3;
 		color: #000;
+	}
+	
+	div#error_explanation
+	{
+		background:#FFCCCC;
+		border:1px solid #f00;
+		margin:5px 0;
+		padding:5px;
+		width:500px;
 	}
 	
 	div.field_with_errors

@@ -1,5 +1,6 @@
 body {
   background: #f5f6f7;
+  font-family: 'Droid Sans', arial, serif;
   font-size: 0.9em;
   margin: 0 auto;
 }
@@ -7,6 +8,7 @@ body {
 .text-right { text-align: right; }
 .left { float: left; }
 .clear { clear: both; }
+.center { text-align: center; }
 div#authentication {
   border-bottom: 1px solid #e8e8e8;
   -moz-border-radius: 10px;
@@ -21,6 +23,13 @@ div#authentication a {
   text-decoration: none;
 }
 div#authentication a:hover { color: #00ccff; }
+div#messages {
+  background: #ffffcc;
+  color: #222222;
+  font-weight: bold;
+  margin: 10px 0;
+  padding: 10px;
+}
 .bubble {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e8e8e8));
   -moz-box-shadow: 0 0 2px #888888;
@@ -37,10 +46,7 @@ div#wrapper {
   margin: 80px auto;
   width: 940px;
 }
-div#wrapper h1#logo {
-  font-family: 'Droid Sans', arial, serif;
-  font-size: 3em;
-}
+div#wrapper h1#logo { font-size: 3em; }
 div#wrapper h1#logo a {
   color: #666666;
   text-decoration: none;
@@ -98,7 +104,7 @@ div#wrapper div.single-user:hover {
 div#wrapper .profile-page { width: 300px; }
 div#wrapper div.bio {
   line-height: 1.4em;
-  margin: 10px;
+  margin: 20px 0;
   width: 450px;
 }
 div#wrapper div.bio h2 {
@@ -160,6 +166,13 @@ form input[type=submit]:active {
   -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
   box-shadow: inset 0 0 1px 1px #e3e3e3;
   color: #000000;
+}
+form div#error_explanation {
+  background: #ffcccc;
+  border: 1px solid #ff0000;
+  margin: 5px 0;
+  padding: 5px;
+  width: 500px;
 }
 form div.field_with_errors { display: inline; }
 form div.field_with_errors input { background: #ffcccc; }
