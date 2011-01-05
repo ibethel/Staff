@@ -4,10 +4,11 @@ body {
   margin: 0 auto;
 }
 .right { float: right; }
+.text-right { text-align: right; }
 .left { float: left; }
 .clear { clear: both; }
 div#authentication {
-  background: #3399cc;
+  background: url('/images/img-hr.png') repeat-x center;
   -moz-border-radius: 10px;
   border-bottom-left: 10px;
   color: #ffffff;
@@ -19,10 +20,10 @@ div#authentication a {
   text-decoration: none;
 }
 .bubble {
-  background: #ffffff;
-  -moz-box-shadow: 0 0 5px #888888;
-  -webkit-box-shadow: 0 0 5px #888888;
-  box-shadow: 0 0 5px #888888;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e8e8e8));
+  -moz-box-shadow: 0 0 2px #888888;
+  -webkit-box-shadow: 0 0 2px #888888;
+  box-shadow: 0 0 2px #888888;
   -moz-border-radius: 15px;
   border-radius: 7px;
   margin: 20px;
@@ -32,17 +33,17 @@ div#authentication a {
 }
 div#wrapper {
   margin: 80px auto;
-  width: 90%;
+  width: 960px;
 }
 div#wrapper h1#logo a {
   color: #222222;
   text-decoration: none;
 }
 div#wrapper div.single-user {
-  background: #ffffff;
-  -moz-box-shadow: 0 0 5px #888888;
-  -webkit-box-shadow: 0 0 5px #888888;
-  box-shadow: 0 0 5px #888888;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e8e8e8));
+  -moz-box-shadow: 0 0 2px #888888;
+  -webkit-box-shadow: 0 0 2px #888888;
+  box-shadow: 0 0 2px #888888;
   -moz-border-radius: 15px;
   border-radius: 7px;
   margin: 20px;
@@ -61,10 +62,10 @@ div#wrapper div.single-user div.user-name a {
   text-decoration: none;
 }
 div#wrapper .profile-page {
-  background: #ffffff;
-  -moz-box-shadow: 0 0 5px #888888;
-  -webkit-box-shadow: 0 0 5px #888888;
-  box-shadow: 0 0 5px #888888;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e8e8e8));
+  -moz-box-shadow: 0 0 2px #888888;
+  -webkit-box-shadow: 0 0 2px #888888;
+  box-shadow: 0 0 2px #888888;
   -moz-border-radius: 15px;
   border-radius: 7px;
   margin: 20px;
@@ -82,33 +83,75 @@ div#wrapper .profile-page div.user-name a {
   color: #333333;
   text-decoration: none;
 }
+div#wrapper div.single-user:hover {
+  -moz-box-shadow: 0 0 7px #888888;
+  -webkit-box-shadow: 0 0 7px #888888;
+  box-shadow: 0 0 7px #888888;
+  cursor: pointer;
+}
 div#wrapper .profile-page { width: 300px; }
+div#wrapper div.bio {
+  line-height: 1.4em;
+  margin: 10px;
+  width: 450px;
+}
+div#wrapper div.bio h2 {
+  margin: 0;
+  padding: 0;
+}
+div#wrapper div.bio h4 {
+  margin: 0;
+  padding: 0;
+}
 form label { font-weight: bold; }
 form div.field {
   background: #f8f8f8;
-  margin: 10px 0;
+  margin: 15px 0;
 }
-form div.actions { margin: 50px 0; }
+form div.actions {
+  clear: both;
+  margin: 90px 0;
+}
+form input[type=text] {
+  font-size: 1.1em;
+  padding: 3px;
+}
+form textarea {
+  line-height: 1.5em;
+  padding: 5px;
+  width: 500px;
+}
 form input[type=submit] {
-  background: #3399cc;
-  background: -moz-linear-gradient(0% 100% 90deg, #5288e5, #3399cc);
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5288e5), to(#3399cc));
-  border: 1px solid #5288e5;
-  border-width: 1px 1px 0 1px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: inset 0 1px 0 0 #3399cc;
-  -webkit-box-shadow: inset 0 1px 0 0 #3399cc;
-  box-shadow: inset 0 1px 0 0 #3399cc;
-  color: #ffffff !important;
-  cursor: pointer;
-  font-family: "lucida grande", sans-serif;
-  font-size: 11px;
+  background: #e3e3e3;
+  border: 1px solid #cccccc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
+  -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+  box-shadow: inset 0 0 1px 1px #f6f6f6;
+  color: #333333;
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+  font-size: 12px;
   font-weight: bold;
   line-height: 1;
-  padding: 7px;
+  padding: 8px 0 9px;
   text-align: center;
-  text-decoration: none;
-  text-shadow: 0 -1px 0 #4c9021;
+  text-shadow: 0 1px 0px #ffffff;
+  width: 150px;
+}
+form input[type=submit]:hover {
+  background: #d9d9d9;
+  -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
+  -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+  box-shadow: inset 0 0 1px 1px #eaeaea;
+  color: #222222;
+  cursor: pointer;
+}
+form input[type=submit]:active {
+  background: #d0d0d0;
+  -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
+  -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+  box-shadow: inset 0 0 1px 1px #e3e3e3;
+  color: #000000;
 }

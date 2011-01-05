@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110105001325) do
+ActiveRecord::Schema.define(:version => 20110105033554) do
 
   create_table "slugs", :force => true do |t|
     t.string   "name"
@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(:version => 20110105001325) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
+    t.string   "department"
+    t.string   "position"
+    t.text     "bio"
   end
 
 end

@@ -1,10 +1,16 @@
-<div class="profile-page">
+<div class="profile-page left">
 	<div id="video-screenshot">
-		<video src="<%= @user.video.url %>" controls="controls" width="300" height="300">
-			your browser does not support the video tag
-		</video>
+		<%= render :partial => "users/video", locals: {user: @user}%>
 	</div>
 	<div class="user-name">
 		<%= @user.name %>
 	</div>
 </div>
+<div class="bio right">
+	<% if @user.bio %>
+		<h2><%= @user.name %></h2>
+		<h4><%= @user.department %> - <%= @user.position %></h4>
+		<%= simple_format @user.bio %>
+	<% end %>
+</div>
+<div class="clear"></div>

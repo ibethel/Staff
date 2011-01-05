@@ -1,3 +1,10 @@
+<div class="right">
+	<div class="bubble right">
+		<%= image_tag(@user.image.url(:medium))%>
+	</div>
+	<div class="profile-page clear">
+		<%= render :partial => "users/video", locals: {user: @user}%>
+	</div>
+</div>
 <h1>Edit Profile</h1>
-
 <%= render 'form' %>
