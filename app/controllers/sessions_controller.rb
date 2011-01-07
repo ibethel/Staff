@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if user = User.find_by_email(auth["user_info"]["email"])
       log_user_in(auth)
     else
-      redirect_to root_path, :notice => "That login could not be found"
+      redirect_to root_path, :notice => "The login at #{auth["user_info"]["email"]} could not be found"
     end
   end
 
