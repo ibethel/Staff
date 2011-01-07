@@ -53,11 +53,4 @@ ActiveRecord::Schema.define(:version => 20110107043630) do
     t.text     "bio"
   end
 
-  create_table "views", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "coworker_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end

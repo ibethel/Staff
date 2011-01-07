@@ -11,3 +11,12 @@ gem "friendly_id", "~> 3.1"
 gem 'jquery-rails', '>= 0.2.6'
 gem 'remotipart'
 gem "paperclip", "~> 2.3"
+
+group :development do
+	gem 'capistrano'
+	gem "capistrano-ext"
+end
+
+group :production do
+	gem 'mysql2'
+end
