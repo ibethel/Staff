@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   
-  has_many :views
-  has_many :coworkers, through: :views
+  has_many :friendships
+  has_many :friends, through: :friendships
+  
   has_friendly_id :name, :use_slug => true
   has_attached_file :image, default_url: "/images/defaultProfilePic.png", styles: { medium: "150x150!", thumb: "100x100!" }
   has_attached_file :video
@@ -24,6 +25,12 @@ class User < ActiveRecord::Base
       user.position = "Hard Worker"
     end
   end
+  
+  # Show all of the people that the user is not friends with
+  def missing_connections
+    User.all
+  end
+  
   
   private
 

@@ -5,22 +5,13 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
     @users = User.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @users }
-    end
   end
 
   # GET /users/1
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @user }
-    end
+    current_user.friendships.build(friend_id: @user.id).save if current_user
   end
 
   # GET /users/1/edit
@@ -36,10 +27,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to(profile_path(@user), :notice => 'Your profile has been updated') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
   end
