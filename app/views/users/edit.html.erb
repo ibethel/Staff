@@ -10,13 +10,13 @@
 <%= render 'form' %>
 
 <div id="friendships">
-	<div id="should-meet">
+	<div id="should-meet" class="clear">
 		<h4>You should meet:</h4>
 		<% @user.missing_connections.each do |user| %>
 			<%= render partial: "users/single", locals: {user: user}%>
 		<% end %>
 	</div>
-	<div id="has-met">
+	<div id="has-met" class="clear">
 		<h4>You have met:</h4>
 		<% @user.friendships.each do |friend| %>
 			<%= render partial: "users/single", locals: {user: friend.friend}%>

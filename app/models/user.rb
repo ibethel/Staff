@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   
   # Show all of the people that the user is not friends with
   def missing_connections
-    User.all
+    User.where('id NOT IN(?)', friendships.map(&:friend_id))
   end
   
   
