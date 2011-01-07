@@ -1,6 +1,8 @@
 <div id="all-staff-list">
-	<% @users.each do |user| %>
-		<%= render partial: "users/single", locals: {user: user}%>
+	<% cache('all-staff-list') do %>
+		<% @users.each do |user| %>
+			<%= render partial: "users/single", locals: {user: user}%>
+		<% end %>
 	<% end %>
 </div>
 <div class="clear"></div>
