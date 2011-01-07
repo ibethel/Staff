@@ -9,6 +9,7 @@ body {
 .left { float: left; }
 .clear { clear: both; }
 .center { text-align: center; }
+img { outline: none; }
 div#authentication {
   border-bottom: 1px solid #e8e8e8;
   -moz-border-radius: 10px;
