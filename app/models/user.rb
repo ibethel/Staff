@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
         current_user.update_attributes(name: "#{user.given_name} #{user.family_name}")
         current_user.save
       else
-        User.create!(email: "#{user.username}@ibethel.org", name: "#{user.given_name} #{user.family_name}", department: "Bethel Church", position: "Hard Worker")
+        User.create!(email: "#{user.username}@ibethel.org".downcase, name: "#{user.given_name} #{user.family_name}", department: "Bethel Church", position: "Hard Worker")
       end
     end
   end
