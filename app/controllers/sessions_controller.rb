@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     end
     
     def log_user_in(auth)
-      user = user = User.find_by_email(auth["user_info"]["email"]) 
+      user = user = User.find_by_email(auth["user_info"]["email"])
       session[:user_id] = user.id
       redirect_to root_path, :notice => "You have been signed in!"
     end

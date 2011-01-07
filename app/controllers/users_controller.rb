@@ -25,7 +25,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        expire_fragment('all-staff-list')
         format.html { redirect_to(profile_path(@user), :notice => 'Your profile has been updated') }
       else
         format.html { render :action => "edit" }
