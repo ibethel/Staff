@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   
   def create
     auth = request.env["omniauth.auth"]
-    if User.find_by_provider_and_uid(auth["provider"], auth["uid"])
+    if user = User.find_by_email(auth["user_info"]["email"])
       log_user_in(auth)
     else
       create_new_user(auth)
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     end
     
     def log_user_in(auth)
-      user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
+      user = user = User.find_by_email(auth["user_info"]["email"]) 
       session[:user_id] = user.id
       redirect_to root_path, :notice => "You have been signed in!"
     end

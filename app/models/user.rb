@@ -1,4 +1,8 @@
+require 'gappsprovisioning/provisioningapi'
+
 class User < ActiveRecord::Base
+  
+  include GAppsProvisioning
   
   has_many :friendships
   has_many :friends, through: :friendships
@@ -16,15 +20,23 @@ class User < ActiveRecord::Base
   
   before_save :randomize_file_name
   
-  def self.create_with_omniauth(auth)
-    create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.name = auth["user_info"]["name"]
-      user.department = "Bethel Church"
-      user.position = "Hard Worker"
+  # Build all of the users
+  def self.build_user_list
+    adminuser = "chrisg@ibethel.org"
+    password  = "Bulld0g"
+    myapps = ProvisioningApi.new(adminuser, password)
+    
+    myapps.retrieve_all_users.each do |user|
+      current_user = User.find_by_email("#{user.username}@ibethel.org")
+      if current_user
+        current_user.update_attributes(name: "#{user.given_name} #{user.family_name}")
+        current_user.save
+      else
+        User.create!(email: "#{user.username}@ibethel.org", name: "#{user.given_name} #{user.family_name}", department: "Bethel Church", position: "Hard Worker")
+      end
     end
   end
+  
   
   # Show all of the people that the user is not friends with
   def missing_connections

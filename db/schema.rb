@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110107043630) do
+ActiveRecord::Schema.define(:version => 20110107191834) do
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"
@@ -36,8 +36,6 @@ ActiveRecord::Schema.define(:version => 20110107043630) do
     t.string   "video"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
     t.string   "cached_slug"
     t.string   "image"
     t.string   "image_file_name"
@@ -51,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20110107043630) do
     t.string   "department"
     t.string   "position"
     t.text     "bio"
+    t.string   "email"
   end
 
 end
