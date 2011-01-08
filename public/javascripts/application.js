@@ -1,6 +1,4 @@
 $(function(){
-
-	$("div#all-staff-list").randomize("div.single-user");
 	
 	$('#all-staff-list').infinitescroll({
 	    navSelector  : "div.pagination",   // selector for the paged navigation (it will be hidden)
