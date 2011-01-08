@@ -4,11 +4,13 @@ class User < ActiveRecord::Base
   
   include GAppsProvisioning
   
+  default_scope :limit => 20
+  
   has_many :friendships
   has_many :friends, through: :friendships
   
   has_friendly_id :name, :use_slug => true
-  has_attached_file :image, default_url: "/images/defaultProfilePic.png", styles: { medium: "150x150!", thumb: "100x100!" }
+  has_attached_file :image, default_url: "/images/defaultProfilePic.png", styles: { medium: "150x113!", thumb: "100x100!" }
   has_attached_file :video
   
   
