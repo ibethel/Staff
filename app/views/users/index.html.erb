@@ -1,8 +1,7 @@
 <div id="all-staff-list">
-	<% cache('all-staff-list') do %>
-		<% @users.each do |user| %>
-			<%= render partial: "users/single", locals: {user: user}%>
-		<% end %>
+	<% @users.each do |user| %>
+		<%= render partial: "users/single", locals: {user: user}%>
 	<% end %>
 </div>
 <div class="clear"></div>
+<div id="pagination"><%= will_paginate @users %></div>

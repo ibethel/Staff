@@ -1,6 +1,6 @@
 <div class="single-user">
 	<div class="video-screenshot">
-		<%= link_to(image_tag(user.image.url(:medium)), user) %>
+		<%= link_to(image_tag(user.image.url(:medium), class: "user-image"), user) %>
 	</div>
 	<div class="user-name">
 		<%= link_to user.name, user %>

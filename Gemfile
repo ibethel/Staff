@@ -11,6 +11,7 @@ gem "friendly_id", "~> 3.1"
 gem 'jquery-rails', '>= 0.2.6'
 gem 'remotipart'
 gem "paperclip", "~> 2.3"
+gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 
 group :development do
 	gem 'capistrano'

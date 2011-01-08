@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   
   include GAppsProvisioning
   
-  default_scope :limit => 20
+  default_scope limit: 50, order: :updated_at
   
   has_many :friendships
   has_many :friends, through: :friendships

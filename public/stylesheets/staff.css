@@ -45,7 +45,7 @@ div#messages {
 }
 div#wrapper {
   margin: 80px auto;
-  width: 90%;
+  max-width: 1150px;
 }
 div#wrapper h1#logo { font-size: 3em; }
 div#wrapper h1#logo a {
@@ -76,6 +76,10 @@ div#wrapper div.single-user div.user-name a {
   color: #333333;
   text-decoration: none;
 }
+div#wrapper div.single-user img.user-image {
+  height: 113px;
+  width: 150px;
+}
 div#wrapper .profile-page {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e8e8e8));
   -moz-box-shadow: 0 0 2px #888888;
@@ -99,6 +103,10 @@ div#wrapper .profile-page div.user-name {
 div#wrapper .profile-page div.user-name a {
   color: #333333;
   text-decoration: none;
+}
+div#wrapper .profile-page img.user-image {
+  height: 113px;
+  width: 150px;
 }
 div#wrapper div.single-user:hover {
   -moz-box-shadow: 0 0 7px #888888;
