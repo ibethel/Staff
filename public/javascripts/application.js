@@ -1,6 +1,6 @@
 $(function(){
 	
-	if($('#all-staff-list').html())
+	if($('#all-staff-list').length)
 	{
 		$('#all-staff-list').infinitescroll({
 		    navSelector  : "div.pagination",   // selector for the paged navigation (it will be hidden)
