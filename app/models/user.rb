@@ -23,21 +23,27 @@ class User < ActiveRecord::Base
   before_save :randomize_file_name
   
   # Build all of the users
-  def self.build_user_list
-    adminuser = "chrisg@ibethel.org"
-    password  = "Bulld0g"
-    myapps = ProvisioningApi.new(adminuser, password)
+  
+  class << self
     
-    myapps.retrieve_all_users.each do |user|
-      current_user = User.find_by_email("#{user.username}@ibethel.org")
-      if current_user
-        current_user.update_attributes(name: "#{user.given_name} #{user.family_name}")
-        current_user.save
-      else
-        User.create!(email: "#{user.username}@ibethel.org".downcase, name: "#{user.given_name} #{user.family_name}", department: "Bethel Church", position: "Hard Worker")
+    def build_user_list
+      adminuser = "chrisg@ibethel.org"
+      password  = "Bulld0g"
+      myapps = ProvisioningApi.new(adminuser, password)
+
+      myapps.retrieve_all_users.each do |user|
+        current_user = User.find_by_email("#{user.username}@ibethel.org")
+        if current_user
+          current_user.update_attributes(name: "#{user.given_name} #{user.family_name}")
+          current_user.save
+        else
+          User.create!(email: "#{user.username}@ibethel.org".downcase, name: "#{user.given_name} #{user.family_name}", department: "Bethel Church", position: "Hard Worker")
+        end
       end
     end
+    
   end
+  
   
   
   # Show all of the people that the user is not friends with
