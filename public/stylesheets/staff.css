@@ -31,7 +31,7 @@ div#messages {
   padding: 10px;
 }
 .bubble {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#000000));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#222222));
   border: 1px solid #e8e8e8;
   -moz-border-radius: 3px;
   border-radius: 2px;
@@ -50,7 +50,7 @@ div#wrapper h1#logo a {
   text-decoration: none;
 }
 div#wrapper div.single-user {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#000000));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#222222));
   border: 1px solid #e8e8e8;
   -moz-border-radius: 3px;
   border-radius: 2px;
@@ -81,7 +81,7 @@ div#wrapper div.single-user img.user-image {
   width: 150px;
 }
 div#wrapper .profile-page {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#000000));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#222222));
   border: 1px solid #e8e8e8;
   -moz-border-radius: 3px;
   border-radius: 2px;
