@@ -1,7 +1,5 @@
 body {
   background: url(/images/bg.png) left top fixed no-repeat #f8f8f8;
-  border-left: 5px solid #cccccc;
-  border-right: 5px solid #cccccc;
   font-size: 0.9em;
   margin: 0 auto;
 }
@@ -20,7 +18,7 @@ div#authentication {
   text-align: right;
 }
 div#authentication a {
-  color: #666666;
+  color: #ffffff;
   font-weight: bold;
   text-decoration: none;
 }
@@ -34,9 +32,9 @@ div#messages {
 }
 .bubble {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e8e8e8));
-  -moz-box-shadow: 0 0 2px #888888;
-  -webkit-box-shadow: 0 0 2px #888888;
-  box-shadow: 0 0 2px #888888;
+  -moz-box-shadow: 0 0 10px #ffffff;
+  -webkit-box-shadow: 0 0 10px #ffffff;
+  box-shadow: 0 0 10px #ffffff;
   -moz-border-radius: 3px;
   border-radius: 2px;
   margin: 20px;
@@ -55,9 +53,9 @@ div#wrapper h1#logo a {
 }
 div#wrapper div.single-user {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e8e8e8));
-  -moz-box-shadow: 0 0 2px #888888;
-  -webkit-box-shadow: 0 0 2px #888888;
-  box-shadow: 0 0 2px #888888;
+  -moz-box-shadow: 0 0 10px #ffffff;
+  -webkit-box-shadow: 0 0 10px #ffffff;
+  box-shadow: 0 0 10px #ffffff;
   -moz-border-radius: 3px;
   border-radius: 2px;
   margin: 20px;
@@ -88,9 +86,9 @@ div#wrapper div.single-user img.user-image {
 }
 div#wrapper .profile-page {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#e8e8e8));
-  -moz-box-shadow: 0 0 2px #888888;
-  -webkit-box-shadow: 0 0 2px #888888;
-  box-shadow: 0 0 2px #888888;
+  -moz-box-shadow: 0 0 10px #ffffff;
+  -webkit-box-shadow: 0 0 10px #ffffff;
+  box-shadow: 0 0 10px #ffffff;
   -moz-border-radius: 3px;
   border-radius: 2px;
   margin: 20px;
@@ -120,9 +118,9 @@ div#wrapper .profile-page img.user-image {
   width: 150px;
 }
 div#wrapper div.single-user:hover {
-  -moz-box-shadow: 0 0 4px #888888;
-  -webkit-box-shadow: 0 0 4px #888888;
-  box-shadow: 0 0 4px #888888;
+  -moz-box-shadow: 0 0 20px #ffffff;
+  -webkit-box-shadow: 0 0 20px #ffffff;
+  box-shadow: 0 0 20px #ffffff;
   cursor: pointer;
 }
 div#wrapper .profile-page { width: 300px; }
@@ -139,11 +137,11 @@ div#wrapper div.bio h4 {
   margin: 0;
   padding: 0;
 }
-form label { font-weight: bold; }
-form div.field {
-  background: #f8f8f8;
-  margin: 15px 0;
+form label {
+  color: #e8e8e8;
+  font-weight: bold;
 }
+form div.field { margin: 15px 0; }
 form div.actions {
   clear: both;
   margin: 90px 0;
