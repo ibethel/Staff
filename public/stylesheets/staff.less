@@ -1,6 +1,6 @@
 body
 {
-	background:url(/images/bg.png) left top fixed no-repeat #f8f8f8;
+	background:url(/images/bg.png) top center repeat-x #fff;
 	font-size:0.9em;
 	font-family: verdana;
 	margin:0 auto;
@@ -37,27 +37,6 @@ img
 }
 
 
-div#authentication
-{
-	color:#999;
-	padding:10px;
-	position:absolute;
-	top:0;
-	right:15%;
-	text-align:right;
-	a
-	{
-		color:#fff;
-		font-weight:bold;
-		text-decoration:none;
-	}
-	
-	a:hover
-	{
-		color:#00CCFF;
-	}
-}
-
 div#messages
 {
 	background:#FFFFCC;
@@ -69,8 +48,8 @@ div#messages
 
 .bubble
 {
-	
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#e8e8e8));
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555), to(#111));
+	border:1px solid #ccc;
 	-moz-border-radius: 3px;
 	border-radius: 2px;
 	margin:20px;
@@ -81,15 +60,36 @@ div#messages
 
 div#wrapper
 {
-	
-	h1#logo
+	div.main-content
 	{
-		font-size:3em;
+		margin:50px 0;
+	}
+	
+	#logo
+	{
+		margin-top:10px;
 		
 		a
 		{
-			color:#666;
+			outline:none;
+		}
+	}
+	
+	div#authentication
+	{
+		color:#999;
+		margin-top:15px;
+		text-align:right;
+		a
+		{
+			color:#fff;
+			font-weight:bold;
 			text-decoration:none;
+		}
+
+		a:hover
+		{
+			color:#00CCFF;
 		}
 	}
 	
@@ -99,6 +99,7 @@ div#wrapper
 	div#all-staff-list
 	{
 		padding:20px;
+		text-align:center;
 	}
 	
 	div.single-user, .profile-page
@@ -109,18 +110,20 @@ div#wrapper
 
 		div.user-name
 		{
-			background:#fff;
-			color:#000;
+			background:rgba(255,255,255,0.3);
+			color:#fff;
+			text-shadow: #000 1px 1px 1px;
 			font-size:1em;
 			position:absolute;
 			bottom:10px;
 			left:0;
 			padding:3px;
+			text-transform:capitalize;
 			width:164px;
 
 			a
 			{
-				color:#000;
+				color:#fff;
 				text-decoration:none;
 			}
 		}
@@ -134,14 +137,15 @@ div#wrapper
 	
 	div.single-user:hover
 	{
-		-moz-box-shadow: 0 0 10px #f99;
-		-webkit-box-shadow: 0 0 10px #f99;
-		box-shadow: 0 0 10px #f99;
+		-moz-box-shadow: 0 0 10px #666;
+		-webkit-box-shadow: 0 0 10px #666;
+		box-shadow: 0 0 10px #666;
 		cursor:pointer;
 	}
 	
 	.profile-page
 	{
+		color:#fff;
 		width:300px;
 	}
 	
@@ -164,7 +168,7 @@ form
 {
 	label
 	{
-		color:#e8e8e8;
+		color:#222;
 		font-weight:bold;
 	}
 	

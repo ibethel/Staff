@@ -8,22 +8,24 @@
 </head>
 <body>
 	<div id="wrapper">
-		<%= link_to(image_tag("logo.png"), root_path)%>
-		<div id="authentication">
+		<%= link_to(image_tag("logo.png", id: "logo", class: "left"), root_path)%>
+		<div id="authentication" class="right">
 			<% if current_user %>
 				<%= link_to "My Profile", profile_path(current_user) %> | <%= link_to "Sign Out", signout_path %>
 			<% else %>
 				<%= link_to "Sign in", "/auth/google_apps" %>
 			<% end %>
 		</div>
-		
+		<div class="clear"></div>
 		<% if flash[:notice] %>
 			<div id="messages">
 			<%= flash[:notice] %>
 			</div>
 		<% end%>
 		
-		<%= yield %>
+		<div class="main-content">
+			<%= yield %>
+		</div>
 	</div>
 </body>
 </html>

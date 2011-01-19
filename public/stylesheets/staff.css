@@ -1,5 +1,5 @@
 body {
-  background: url(/images/bg.png) left top fixed no-repeat #f8f8f8;
+  background: url(/images/bg.png) top center repeat-x #ffffff;
   font-size: 0.9em;
   font-family: verdana;
   margin: 0 auto;
@@ -10,20 +10,6 @@ body {
 .clear { clear: both; }
 .center { text-align: center; }
 img { outline: none; }
-div#authentication {
-  color: #999999;
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  right: 15%;
-  text-align: right;
-}
-div#authentication a {
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
-}
-div#authentication a:hover { color: #00ccff; }
 div#messages {
   background: #ffffcc;
   color: #222222;
@@ -32,7 +18,8 @@ div#messages {
   padding: 10px;
 }
 .bubble {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cccccc), to(#e8e8e8));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#111111));
+  border: 1px solid #cccccc;
   -moz-border-radius: 3px;
   border-radius: 2px;
   margin: 20px;
@@ -44,14 +31,27 @@ div#wrapper {
   margin: 0 auto 80px auto;
   max-width: 80%;
 }
-div#wrapper h1#logo { font-size: 3em; }
-div#wrapper h1#logo a {
-  color: #666666;
+div#wrapper div.main-content { margin: 50px 0; }
+div#wrapper #logo { margin-top: 10px; }
+div#wrapper #logo a { outline: none; }
+div#wrapper div#authentication {
+  color: #999999;
+  margin-top: 15px;
+  text-align: right;
+}
+div#wrapper div#authentication a {
+  color: #ffffff;
+  font-weight: bold;
   text-decoration: none;
 }
-div#wrapper div#all-staff-list { padding: 20px; }
+div#wrapper div#authentication a:hover { color: #00ccff; }
+div#wrapper div#all-staff-list {
+  padding: 20px;
+  text-align: center;
+}
 div#wrapper div.single-user {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cccccc), to(#e8e8e8));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#111111));
+  border: 1px solid #cccccc;
   -moz-border-radius: 3px;
   border-radius: 2px;
   margin: 20px;
@@ -62,17 +62,19 @@ div#wrapper div.single-user {
   position: relative;
 }
 div#wrapper div.single-user div.user-name {
-  background: #ffffff;
-  color: #000000;
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  text-shadow: #000000 1px 1px 1px;
   font-size: 1em;
   position: absolute;
   bottom: 10px;
   left: 0;
   padding: 3px;
+  text-transform: capitalize;
   width: 164px;
 }
 div#wrapper div.single-user div.user-name a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
 }
 div#wrapper div.single-user img.user-image {
@@ -80,7 +82,8 @@ div#wrapper div.single-user img.user-image {
   width: 150px;
 }
 div#wrapper .profile-page {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cccccc), to(#e8e8e8));
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#111111));
+  border: 1px solid #cccccc;
   -moz-border-radius: 3px;
   border-radius: 2px;
   margin: 20px;
@@ -91,17 +94,19 @@ div#wrapper .profile-page {
   position: relative;
 }
 div#wrapper .profile-page div.user-name {
-  background: #ffffff;
-  color: #000000;
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  text-shadow: #000000 1px 1px 1px;
   font-size: 1em;
   position: absolute;
   bottom: 10px;
   left: 0;
   padding: 3px;
+  text-transform: capitalize;
   width: 164px;
 }
 div#wrapper .profile-page div.user-name a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
 }
 div#wrapper .profile-page img.user-image {
@@ -109,12 +114,15 @@ div#wrapper .profile-page img.user-image {
   width: 150px;
 }
 div#wrapper div.single-user:hover {
-  -moz-box-shadow: 0 0 10px #ff9999;
-  -webkit-box-shadow: 0 0 10px #ff9999;
-  box-shadow: 0 0 10px #ff9999;
+  -moz-box-shadow: 0 0 10px #666666;
+  -webkit-box-shadow: 0 0 10px #666666;
+  box-shadow: 0 0 10px #666666;
   cursor: pointer;
 }
-div#wrapper .profile-page { width: 300px; }
+div#wrapper .profile-page {
+  color: #ffffff;
+  width: 300px;
+}
 div#wrapper div.bio {
   line-height: 1.4em;
   margin: 20px 0;
@@ -129,7 +137,7 @@ div#wrapper div.bio h4 {
   padding: 0;
 }
 form label {
-  color: #e8e8e8;
+  color: #222222;
   font-weight: bold;
 }
 form div.field { margin: 15px 0; }
