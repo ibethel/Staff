@@ -2,6 +2,7 @@ body
 {
 	background:url(/images/bg.png) left top fixed no-repeat #f8f8f8;
 	font-size:0.9em;
+	font-family: verdana;
 	margin:0 auto;
 }
 
@@ -38,11 +39,11 @@ img
 
 div#authentication
 {
-	border-bottom:1px solid #e8e8e8;
-	-moz-border-radius: 10px;
-	border-bottom-left: 10px;
 	color:#999;
 	padding:10px;
+	position:absolute;
+	top:0;
+	right:15%;
 	text-align:right;
 	a
 	{
@@ -69,8 +70,7 @@ div#messages
 .bubble
 {
 	
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555), to(#222));
-	border:1px solid #e8e8e8;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#e8e8e8));
 	-moz-border-radius: 3px;
 	border-radius: 2px;
 	margin:20px;
@@ -93,8 +93,13 @@ div#wrapper
 		}
 	}
 	
-	margin:80px auto;
-	max-width:1150px;
+	margin:0 auto 80px auto;
+	max-width:80%;
+	
+	div#all-staff-list
+	{
+		padding:20px;
+	}
 	
 	div.single-user, .profile-page
 	{
@@ -106,7 +111,6 @@ div#wrapper
 		{
 			background:#fff;
 			color:#000;
-			font-family: 'Josefin Sans', arial, serif;
 			font-size:1em;
 			position:absolute;
 			bottom:10px;
@@ -130,9 +134,9 @@ div#wrapper
 	
 	div.single-user:hover
 	{
-		-moz-box-shadow: 0 0 10px #fff;
-		-webkit-box-shadow: 0 0 10px #fff;
-		box-shadow: 0 0 10px #fff;
+		-moz-box-shadow: 0 0 10px #f99;
+		-webkit-box-shadow: 0 0 10px #f99;
+		box-shadow: 0 0 10px #f99;
 		cursor:pointer;
 	}
 	
