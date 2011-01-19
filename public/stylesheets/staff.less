@@ -1,7 +1,8 @@
 body
 {
-	background:#F5F6F7;
-	font-family: 'Droid Sans', arial, serif;
+	background:url(/images/bg.png) left top fixed no-repeat #f8f8f8;
+	border-left:5px solid #ccc;
+	border-right:5px solid #ccc;
 	font-size:0.9em;
 	margin:0 auto;
 }
@@ -74,10 +75,10 @@ div#messages
 	-moz-box-shadow: 0 0 2px #888;
 	-webkit-box-shadow: 0 0 2px #888;
 	box-shadow: 0 0 2px #888;
-	-moz-border-radius: 15px;
-	border-radius: 7px;
+	-moz-border-radius: 3px;
+	border-radius: 2px;
 	margin:20px;
-	padding:20px;
+	padding:10px;
 	text-align:center;
 	width:150px;
 }
@@ -103,18 +104,23 @@ div#wrapper
 	{
 		.bubble;
 		float:left;
+		position:relative;
 
 		div.user-name
 		{
-			color:#333;
-			height:45px;
-			margin-top:10px;
+			background:#fff;
+			color:#000;
 			font-family: 'Josefin Sans', arial, serif;
-			font-size:1.2em;
+			font-size:1em;
+			position:absolute;
+			bottom:10px;
+			left:0;
+			padding:3px;
+			width:164px;
 
 			a
 			{
-				color:#333;
+				color:#000;
 				text-decoration:none;
 			}
 		}
@@ -128,9 +134,9 @@ div#wrapper
 	
 	div.single-user:hover
 	{
-		-moz-box-shadow: 0 0 7px #888;
-		-webkit-box-shadow: 0 0 7px #888;
-		box-shadow: 0 0 7px #888;
+		-moz-box-shadow: 0 0 4px #888;
+		-webkit-box-shadow: 0 0 4px #888;
+		box-shadow: 0 0 4px #888;
 		cursor:pointer;
 	}
 	

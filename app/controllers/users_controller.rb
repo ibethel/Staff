@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = User.paginate(:page => params[:page], :per_page => 25)
+    @users = User.paginate(:page => params[:page], :per_page => 50)
   end
 
   # GET /users/1
