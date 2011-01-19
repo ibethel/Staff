@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   
   before_filter :validate_correct_user, only: [:edit, :update]
+  before_filter :require_login
+  
   # GET /users
   # GET /users.xml
   def index
