@@ -80,6 +80,7 @@ div#wrapper div.single-user img.user-image {
   height: 113px;
   width: 150px;
 }
+div#wrapper div.profile-page { color: #ffffff; }
 div#wrapper div.profile-page div#video-screenshot {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#111111));
   -moz-box-shadow: 0 0 10px #666666;
@@ -94,10 +95,6 @@ div#wrapper div.single-user:hover {
   -webkit-box-shadow: 0 0 10px #666666;
   box-shadow: 0 0 10px #666666;
   cursor: pointer;
-}
-div#wrapper .profile-page {
-  color: #ffffff;
-  width: 300px;
 }
 div#wrapper div.bio {
   font-size: 0.9em;
