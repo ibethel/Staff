@@ -1,14 +1,20 @@
 <div>
 <div class="profile-page left">
+	<div class="bubble">
+		<%= image_tag(@user.image.url(:medium))%>
+	</div>
 	<div id="video-screenshot">
 		<%= render :partial => "users/video", locals: {user: @user}%>
 	</div>
 </div>
 <div class="bio right">
+	<h2><%= @user.name %></h2>
+	<h4><%= @user.department %> - <%= @user.position %></h4>
+	
 	<% if @user.bio %>
-		<h2><%= @user.name %></h2>
-		<h4><%= @user.department %> - <%= @user.position %></h4>
 		<%= simple_format @user.bio %>
+	<% else %>
+		<p><%= @user.name %> has not yet written a bio :( </p>
 	<% end %>
 </div>
 <div class="clear"></div>

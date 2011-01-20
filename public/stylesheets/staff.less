@@ -103,7 +103,7 @@ div#wrapper
 		text-align:center;
 	}
 	
-	div.single-user, .profile-page
+	div.single-user
 	{
 		.bubble;
 		float:left;
@@ -135,6 +135,24 @@ div#wrapper
 		}
 	}
 	
+	div.profile-page
+	{
+		div#video-screenshot
+		{
+			background: .bubble['background'];
+			-moz-box-shadow: 0 0 10px #666;
+			-webkit-box-shadow: 0 0 10px #666;
+			box-shadow: 0 0 10px #666;
+			padding:5px;
+			text-align:center;
+			
+			p
+			{
+				font-size:0.8em;
+			}
+		}
+	}
+	
 	div.single-user:hover
 	{
 		-moz-box-shadow: 0 0 10px #666;
@@ -151,6 +169,7 @@ div#wrapper
 	
 	div.bio
 	{
+		font-size:0.9em;
 		line-height:1.4em;
 		margin:20px 0;
 		width:450px;
@@ -159,6 +178,12 @@ div#wrapper
 		{
 			margin:0;
 			padding:0;
+		}
+		
+		p
+		{
+			background:rgba(172, 187, 74, 0.3);
+			padding:10px;
 		}
 	}
 }
