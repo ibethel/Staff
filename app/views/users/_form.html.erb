@@ -12,7 +12,7 @@
 	<% end %>
 	<div class="field">
 		<%= f.label :department %><br />
-		<%= f.text_field :department %>
+		<%= f.select(:department, options_for_select(departments, @user.department)) %>
 	</div>
 	<div class="field">
 		<%= f.label :position %><br />
