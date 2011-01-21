@@ -16,6 +16,10 @@
 	<% else %>
 		<p><%= @user.name %> has not yet written a bio :( </p>
 	<% end %>
+	
+	<% if current_user && current_user.is_admin? %>
+		<%= link_to "Not a Staff Member", @user, class: "bubble", :confirm => 'Are you sure?', :method => :delete %>
+	<% end %>
 </div>
 <div class="clear"></div>
 </div>

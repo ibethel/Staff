@@ -114,6 +114,12 @@ div#wrapper div.bio p {
   background: rgba(172, 187, 74, 0.3);
   padding: 10px;
 }
+div#wrapper div.bio a {
+  color: #ffffff;
+  display: block;
+  margin: 20px 0;
+  text-decoration: none;
+}
 form label {
   color: #222222;
   font-weight: bold;

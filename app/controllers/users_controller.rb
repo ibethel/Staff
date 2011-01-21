@@ -36,6 +36,17 @@ class UsersController < ApplicationController
   end
   
   
+  def destroy
+    @user = User.find(params[:id])
+    @user.deleted = true
+    @user.save
+    
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: "The user has been deleted" }
+    end
+  end
+  
+  
   private 
     
     def validate_correct_user
