@@ -9,7 +9,7 @@
 </div>
 <div class="bio right">
 	<h2><%= @user.name %></h2>
-	<h4><%= link_to(@user.department.name, @user.department) if @user.department %> - <%= @user.position %></h4>
+	<h4><%= link_to(@user.department.name, @user.department, class: "department") if @user.department %> - <%= @user.position %></h4>
 	
 	<% if @user.bio %>
 		<%= simple_format @user.bio %>
