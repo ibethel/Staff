@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   
   has_many :friendships
   has_many :friends, through: :friendships
+  belongs_to :department
   
   has_friendly_id :name, :use_slug => true
   has_attached_file :image, default_url: "/images/defaultProfilePic.png", styles: { medium: "150x113!", thumb: "100x100!" }
@@ -44,7 +45,7 @@ class User < ActiveRecord::Base
   
   # Show all of the people that the user is not friends with
   def missing_connections
-    User.where('id NOT IN(?)', friendships.map(&:friend_id)).where(deleted: false).limit(8)
+    User.where('id NOT IN(?)', friendships.map(&:friend_id)).active.limit(8)
   end
   
   def is_admin?

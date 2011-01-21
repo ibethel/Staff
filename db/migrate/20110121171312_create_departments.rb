@@ -2,7 +2,7 @@ class CreateDepartments < ActiveRecord::Migration
   def self.up
     
     remove_column :users, :department
-    add_column :users, :department, :references
+    add_column :users, :department_id, :integer
     
     create_table :departments do |t|
       t.string :name

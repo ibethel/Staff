@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110121001013) do
+ActiveRecord::Schema.define(:version => 20110121171312) do
+
+  create_table "departments", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"
@@ -46,12 +52,12 @@ ActiveRecord::Schema.define(:version => 20110121001013) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
-    t.string   "department"
     t.string   "position"
     t.text     "bio"
     t.string   "email"
     t.boolean  "deleted",            :default => false
     t.boolean  "admin",              :default => false
+    t.integer  "department_id"
   end
 
 end
