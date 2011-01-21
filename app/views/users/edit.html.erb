@@ -23,8 +23,8 @@
 	</div>
 	<div id="has-met">
 		<h4>You have met:</h4>
-		<% @user.friendships.each do |friend| %>
-			<%= render partial: "users/single", locals: {user: friend.friend }%>
+		<% @user.friends.each do |friend| %>
+			<%= render partial: "users/single", locals: {user: friend }%>
 		<% end %>
 		<div class="clear"></div>
 	</div>

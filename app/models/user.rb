@@ -47,6 +47,10 @@ class User < ActiveRecord::Base
     User.where('id NOT IN(?)', friendships.map(&:friend_id)).where(deleted: false).limit(8)
   end
   
+  def friends
+    User.where('id IN (?)', friendships.map(&:friend_id)).where(deleted: false)
+  end
+  
   def is_admin?
     admin
   end
