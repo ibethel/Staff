@@ -9,7 +9,7 @@
 </div>
 <div class="bio right">
 	<h2><%= @user.name %></h2>
-	<h4><%= @user.department.name %> - <%= @user.position %></h4>
+	<h4><%= @user.department.name if @user.department %> - <%= @user.position %></h4>
 	
 	<% if @user.bio %>
 		<%= simple_format @user.bio %>
