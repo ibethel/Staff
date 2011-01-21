@@ -120,7 +120,11 @@ div#wrapper div.bio a {
   margin: 20px 0;
   text-decoration: none;
 }
-div#wrapper div.bio a.department { border-bottom: 1px solid #acbb4a; }
+div#wrapper div.bio a.department {
+  border-bottom: 1px solid #acbb4a;
+  color: #222222;
+  display: inline;
+}
 form label {
   color: #222222;
   font-weight: bold;
