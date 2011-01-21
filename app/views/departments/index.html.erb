@@ -1,5 +1,5 @@
 <% @departments.each do |department| %>
-	<h4><%= department.name %></h4>
+	<h4><%= department.name %> (<%= pluralize(department.users.count, "person")%>)</h4>
 	<div id="all-staff-list">
 		<% department.users.each do |user| %>
 			<%= render partial: "users/single", locals: {user: user}%>
