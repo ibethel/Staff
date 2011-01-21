@@ -1,10 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @department.name %>
-</p>
-
-
-<%= link_to 'Edit', edit_department_path(@department) %> |
-<%= link_to 'Back', departments_path %>
+<h2><%= @department.name %></h2>
+<div id="all-staff-list">
+	<% @department.users.each do |user| %>
+		<%= render partial: "users/single", locals: {user: user}%>
+	<% end %>
+	<div class="clear"></div>
+</div>
