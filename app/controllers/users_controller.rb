@@ -38,11 +38,15 @@ class UsersController < ApplicationController
   
   def destroy
     @user = User.find(params[:id])
-    @user.deleted = true
-    @user.save if current_user.is_admin?
     
     respond_to do |format|
-      format.html { redirect_to root_path, notice: "The account has been removed" }
+      if current_user.is_admin?
+        @user.deleted = true
+        @user.save
+        format.html { redirect_to root_path, notice: "The account has been removed" }
+      else
+        format.html { redirect_to @user, notice: "You cannot delete this user" }
+      end
     end
   end
   
