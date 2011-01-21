@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     @user.save
     
     respond_to do |format|
-      format.html { redirect_to root_path, notice: "The user has been deleted" }
+      format.html { redirect_to root_path, notice: "The account has been removed" }
     end
   end
   

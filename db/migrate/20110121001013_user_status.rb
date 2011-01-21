@@ -8,4 +8,5 @@ class UserStatus < ActiveRecord::Migration
     remove_column :users, :deleted
     remove_column :users, :admin
   end
+  
 end
