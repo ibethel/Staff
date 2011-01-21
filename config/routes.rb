@@ -1,4 +1,6 @@
 Staff::Application.routes.draw do
+  resources :departments
+
   resources :users
   root :to => "users#index"
   
