@@ -68,16 +68,4 @@ class DepartmentsController < ApplicationController
       end
     end
   end
-
-  # DELETE /departments/1
-  # DELETE /departments/1.xml
-  def destroy
-    @department = Department.find(params[:id])
-    @department.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(departments_url) }
-      format.xml  { head :ok }
-    end
-  end
 end
