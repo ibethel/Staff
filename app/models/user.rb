@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   
   include GAppsProvisioning
   
-  default_scope limit: 50, conditions: { deleted: false }, order: "updated_at DESC"
+  default_scope limit: 50, order: "updated_at DESC"
   
   has_many :friendships
   has_many :friends, through: :friendships
@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
   validates_attachment_size :image, :less_than => 5.megabytes
   validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
   
+  scope :active, lambda {
+    where(deleted: false)
+  }
   
   before_save :randomize_file_name
   

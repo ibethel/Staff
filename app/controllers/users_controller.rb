@@ -6,13 +6,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = User.paginate(:page => params[:page], :per_page => 50)
+    @users = User.active.paginate(:page => params[:page], :per_page => 50)
   end
 
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = User.find(params[:id])
+    @user = User.active.find(params[:id])
     current_user.friendships.build(friend_id: @user.id).save if current_user
   end
 
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = User.find(params[:id])
+    @user = User.active.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
         expire_fragment('all-staff-list')
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.deleted = true
-    @user.save
+    @user.save if current_user.is_admin?
     
     respond_to do |format|
       format.html { redirect_to root_path, notice: "The account has been removed" }
