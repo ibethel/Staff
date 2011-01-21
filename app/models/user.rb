@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   
   # Show all of the people that the user is not friends with
   def missing_connections
-    User.where('id NOT IN(?)', friendships.map(&:friend_id)).limit(8)
+    User.where('id NOT IN(?)', friendships.map(&:friend_id)).where(deleted: false).limit(8)
   end
   
   def is_admin?
