@@ -3,33 +3,20 @@ class DepartmentsController < ApplicationController
   # GET /departments.xml
   def index
     @departments = @organization.departments
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @departments }
-    end
+    @title = "Departments"
   end
 
   # GET /departments/1
   # GET /departments/1.xml
   def show
     @department = Department.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @department }
-    end
+    @title = @department.name
   end
 
   # GET /departments/new
   # GET /departments/new.xml
   def new
     @department = Department.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @department }
-    end
   end
 
   # GET /departments/1/edit
@@ -45,10 +32,8 @@ class DepartmentsController < ApplicationController
     respond_to do |format|
       if @department.save
         format.html { redirect_to(@department, :notice => 'Department was successfully created.') }
-        format.xml  { render :xml => @department, :status => :created, :location => @department }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @department.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -61,10 +46,8 @@ class DepartmentsController < ApplicationController
     respond_to do |format|
       if @department.update_attributes(params[:department])
         format.html { redirect_to(@department, :notice => 'Department was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @department.errors, :status => :unprocessable_entity }
       end
     end
   end

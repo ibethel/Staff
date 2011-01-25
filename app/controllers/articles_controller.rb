@@ -5,38 +5,25 @@ class ArticlesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @articles = @user.articles
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @articles }
-    end
   end
 
   # GET /articles/1
   # GET /articles/1.xml
   def show
     @article = Article.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @article }
-    end
   end
 
   # GET /articles/new
   # GET /articles/new.xml
   def new
     @article = Article.new
-    
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @article }
-    end
+    @title = "New Article"
   end
 
   # GET /articles/1/edit
   def edit
     @article = Article.belongs_to_user(current_user).find(params[:id])
+    @title = @article.title
   end
 
   # POST /articles
@@ -48,10 +35,8 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.save
         format.html { redirect_to([current_user, @article], :notice => 'Your article has been posted') }
-        format.xml  { render :xml => [current_user, @article], :status => :created, :location => @article }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @article.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -64,10 +49,8 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.update_attributes(params[:article])
         format.html { redirect_to(@article, :notice => 'Article was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @article.errors, :status => :unprocessable_entity }
       end
     end
   end

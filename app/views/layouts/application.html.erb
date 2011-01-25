@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><%= @title || "Get to Know Us"%> | Bethel Church Staff</title>
+	<title><%= @title || "Get to Know Us"%> | <%= @organization.name %></title>
 	<%= stylesheet_link_tag :all, cache: "all-staff" %>
 	<%= javascript_include_tag :defaults, "jquery.scroll", cache: "all-staff" %>
 	<%= csrf_meta_tag %>

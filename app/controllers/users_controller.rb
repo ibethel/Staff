@@ -7,18 +7,20 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
     @users = @organization.users.active.paginate(:page => params[:page], :per_page => 50)
+    @title = "Staff"
   end
 
   # GET /users/1
   # GET /users/1.xml
   def show
     @user = User.active.find(params[:id])
-    current_user.friendships.build(friend_id: @user.id).save if current_user
+    @title = @user.name
   end
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
+    @title = @user.name
   end
 
   # PUT /users/1
