@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   
   default_scope limit: 50, order: "updated_at DESC"
   
+  has_many :articles
   has_many :friendships
   has_many :friends, through: :friendships
   belongs_to :department

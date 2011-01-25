@@ -100,7 +100,7 @@ div#wrapper div.bio {
   font-size: 0.9em;
   line-height: 1.4em;
   margin: 20px 0;
-  width: 450px;
+  width: 400px;
 }
 div#wrapper div.bio h2 {
   margin: 0;
@@ -125,6 +125,44 @@ div#wrapper div.bio a.department {
   color: #222222;
   display: inline;
 }
+div#wrapper div.article {
+  font-size: 0.9em;
+  line-height: 1.4em;
+  margin: 20px 0;
+  width: 400px;
+}
+div#wrapper div.article h2 {
+  margin: 0;
+  padding: 0;
+}
+div#wrapper div.article h4 {
+  margin: 0;
+  padding: 0;
+}
+div#wrapper div.article p {
+  background: rgba(172, 187, 74, 0.3);
+  padding: 10px;
+}
+div#wrapper div.article a {
+  color: #ffffff;
+  display: block;
+  margin: 20px 0;
+  text-decoration: none;
+}
+div#wrapper div.article a.department {
+  border-bottom: 1px solid #acbb4a;
+  color: #222222;
+  display: inline;
+}
+div#wrapper div.article {
+  margin-bottom: 50px;
+  width: 650px;
+}
+div#wrapper div.article p { background: rgba(200, 200, 200, 0.1); }
+div#wrapper div.article h6 {
+  margin: 0;
+  padding: 0;
+}
 form label {
   color: #222222;
   font-weight: bold;
@@ -143,7 +181,16 @@ form textarea {
   padding: 5px;
   width: 500px;
 }
-form input[type=submit] {
+form div#error_explanation {
+  background: #ffcccc;
+  border: 1px solid #ff0000;
+  margin: 5px 0;
+  padding: 5px;
+  width: 500px;
+}
+form div.field_with_errors { display: inline; }
+form div.field_with_errors input { background: #ffcccc; }
+input[type=submit], .buttons {
   background: #e3e3e3;
   border: 1px solid #cccccc;
   -moz-border-radius: 3px;
@@ -159,10 +206,11 @@ form input[type=submit] {
   line-height: 1;
   padding: 8px 0 9px;
   text-align: center;
+  text-decoration: none;
   text-shadow: 0 1px 0px #ffffff;
   width: 150px;
 }
-form input[type=submit]:hover {
+input[type=submit]:hover {
   background: #d9d9d9;
   -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
   -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
@@ -170,19 +218,30 @@ form input[type=submit]:hover {
   color: #222222;
   cursor: pointer;
 }
-form input[type=submit]:active {
+.buttons {
+  background: #d9d9d9;
+  -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
+  -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+  box-shadow: inset 0 0 1px 1px #eaeaea;
+  color: #222222;
+  cursor: pointer;
+}
+input[type=submit]:active {
   background: #d0d0d0;
   -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
   -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
   box-shadow: inset 0 0 1px 1px #e3e3e3;
   color: #000000;
 }
-form div#error_explanation {
-  background: #ffcccc;
-  border: 1px solid #ff0000;
-  margin: 5px 0;
-  padding: 5px;
-  width: 500px;
+.buttons {
+  background: #d0d0d0;
+  -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
+  -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+  box-shadow: inset 0 0 1px 1px #e3e3e3;
+  color: #000000;
 }
-form div.field_with_errors { display: inline; }
-form div.field_with_errors input { background: #ffcccc; }
+div#article-buttons { text-align: right; }
+div#article-buttons .buttons {
+  display: block;
+  margin: 10px 0;
+}

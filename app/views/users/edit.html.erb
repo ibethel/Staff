@@ -8,17 +8,16 @@
 				<%= render :partial => "users/video", locals: {user: @user}%>
 			</div>
 		</div>
+		
+		<div id="article-buttons">
+			<%= link_to "Write an Article", new_user_article_path(@user), class: "buttons" %>
+		</div>
 	</div>
 </div>
 <h1>Edit Profile</h1>
 <%= render 'form' %>
 
-<div id="friendships">
-	<div id="should-meet">
-		<h4>Check these people out:</h4>
-		<% @user.missing_connections.each do |user| %>
-			<%= render partial: "users/single", locals: {user: user}%>
-		<% end %>
-		<div class="clear"></div>
-	</div>
-</div>
+<h3>Your Articles</h3>
+<% @user.articles.each do |article| %>
+	<%= render partial: "articles/single", locals: { article: article }%>
+<% end %>

@@ -1,0 +1,5 @@
+<div class="article">
+	<h4><%= article.title %></h4>
+	<h6>Last updated <%= time_ago_in_words article.updated_at %> ago by <%= article.user.name%></h6>
+	<%= simple_format article.content %>
+</div>

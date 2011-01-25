@@ -1,25 +1,30 @@
 <div>
-<div class="profile-page left">
-	<div class="bubble">
-		<%= image_tag(@user.image.url(:medium))%>
+	<div class="profile-page left">
+		<div class="bubble">
+			<%= image_tag(@user.image.url(:medium))%>
+		</div>
+		<div id="video-screenshot">
+			<%= render :partial => "users/video", locals: {user: @user}%>
+		</div>
+		
 	</div>
-	<div id="video-screenshot">
-		<%= render :partial => "users/video", locals: {user: @user}%>
+	<div class="bio right">
+		<h2><%= @user.name %></h2>
+		<h4><%= link_to(@user.department.name, @user.department, class: "department") if @user.department %> - <%= @user.position %></h4>
+	
+		<% if @user.bio %>
+			<%= simple_format @user.bio %>
+		<% else %>
+			<p><%= @user.name %> has not yet written a bio :( </p>
+		<% end %>
+	
+		<% if current_user && current_user.is_admin? && @user != current_user %>
+			<%= link_to "Not a Staff Member", @user, class: "bubble", :confirm => 'Are you sure?', :method => :delete %>
+		<% end %>
 	</div>
-</div>
-<div class="bio right">
-	<h2><%= @user.name %></h2>
-	<h4><%= link_to(@user.department.name, @user.department, class: "department") if @user.department %> - <%= @user.position %></h4>
+	<div class="clear"></div>
 	
-	<% if @user.bio %>
-		<%= simple_format @user.bio %>
-	<% else %>
-		<p><%= @user.name %> has not yet written a bio :( </p>
+	<% @user.articles.each do |article| %>
+		<%= render partial: "articles/single", locals: { article: article }%>
 	<% end %>
-	
-	<% if current_user && current_user.is_admin? && @user != current_user %>
-		<%= link_to "Not a Staff Member", @user, class: "bubble", :confirm => 'Are you sure?', :method => :delete %>
-	<% end %>
-</div>
-<div class="clear"></div>
 </div>

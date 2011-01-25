@@ -1,7 +1,10 @@
 Staff::Application.routes.draw do
+  
   resources :departments
-
-  resources :users
+  resources :users do
+    resources :articles
+  end
+  
   root :to => "users#index"
   
   match "/auth/:provider/callback" => "sessions#create"
