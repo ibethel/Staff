@@ -19,6 +19,9 @@
 		<div class="bio">
 			<h2><%= @user.name %></h2>
 			<h4><%= link_to(@user.department.name, @user.department, class: "department") if @user.department %> - <%= @user.position %></h4>
+			<% if @user.show_contact_info %>
+				<h5><%= @user.email %></h5>
+			<% end %>
 	
 			<% if @user.bio %>
 				<%= simple_format @user.bio %>
