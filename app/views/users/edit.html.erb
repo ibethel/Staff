@@ -18,7 +18,11 @@
 <h1>Edit Profile</h1>
 <%= render 'form' %>
 
-<h3>Your Articles</h3>
-<% @user.articles.each do |article| %>
-	<%= render partial: "articles/single", locals: { article: article }%>
+<% if @user.articles.count == 0 %>
+	<h4>You have not written any articles.  <%= link_to "Would you like to write one?", new_user_article_path(@user) %></h4>
+<% elsif %>
+	<h3>Your Articles</h3>
+	<% @user.articles.each do |article| %>
+		<%= render partial: "articles/single", locals: { article: article }%>
+	<% end %>
 <% end %>
