@@ -187,6 +187,10 @@ form textarea {
   padding: 5px;
   width: 500px;
 }
+form span.hint {
+  background: rgba(172, 187, 74, 0.3);
+  font-size: 0.9em;
+}
 form div#error_explanation {
   background: #ffcccc;
   border: 1px solid #ff0000;

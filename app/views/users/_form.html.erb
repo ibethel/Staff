@@ -11,12 +11,20 @@
 		</div>
 	<% end %>
 	<div class="field">
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</div>
+	<div class="field">
 		<%= f.label :department %><br />
 		<%= f.select(:department_id, options_from_collection_for_select(Department.all, :id, :name, @user.department_id)) %>
 	</div>
 	<div class="field">
 		<%= f.label :position %><br />
 		<%= f.text_field :position %>
+	</div>
+	<div class="field">
+		<%= f.label :show_contact_info %><br />
+		<%= f.check_box :show_contact_info %> <span class="hint">Allow others to see my email (<%= @user.email%>)</span>
 	</div>
 	<div class="field">
 		<%= f.label :bio, "Short Bio" %><br />
