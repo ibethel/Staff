@@ -1,6 +1,9 @@
 Staff::Application.routes.draw do
+
+  resources :departments do
+    resources :users
+  end
   
-  resources :departments
   resources :users do
     resources :articles
   end

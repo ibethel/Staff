@@ -4,12 +4,13 @@ class User < ActiveRecord::Base
   
   include GAppsProvisioning
   
-  default_scope limit: 50, order: "updated_at DESC"
+  default_scope order: "updated_at DESC"
   
   has_many :articles
   has_many :friendships
   has_many :friends, through: :friendships
   belongs_to :department
+  belongs_to :organization
   
   has_friendly_id :name, :use_slug => true
   has_attached_file :image, default_url: "/images/defaultProfilePic.png", styles: { medium: "150x113!", thumb: "100x100!" }
