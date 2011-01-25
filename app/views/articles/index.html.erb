@@ -1,3 +1,6 @@
+<% if @articles.count == 0 %>
+	<h2><%= @user.name %> has not written any articles</h2>
+<% end %>
 <% @articles.each do |article| %>
 	<%= render partial: "articles/single", locals: { article: article }%>
 <% end %>
