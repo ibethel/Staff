@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = User.active.paginate(:page => params[:page], :per_page => 50)
+    @users = @organization.users.active.paginate(:page => params[:page], :per_page => 50)
   end
 
   # GET /users/1
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         expire_fragment('all-staff-list')
-        format.html { redirect_to(profile_path(@user), :notice => 'Your profile has been updated') }
+        format.html { redirect_to(profile_path(@user), :notice => "Your profile has been updated") }
       else
         format.html { render :action => "edit" }
       end
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
         @user.save
         format.html { redirect_to root_path, notice: "The account has been removed" }
       else
-        format.html { redirect_to @user, notice: "You cannot delete this user" }
+        format.html { redirect_to @user, notice: "You cannot delete this account" }
       end
     end
   end

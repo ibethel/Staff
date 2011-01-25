@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
   rescue_from AbstractController::ActionNotFound, with: :render_404
   helper_method :current_user
+  before_filter :load_organization
   
   private 
   
@@ -16,5 +17,9 @@ class ApplicationController < ActionController::Base
     
     def require_login
       redirect_to "/auth/google_apps" unless current_user
+    end
+    
+    def load_organization
+      @organization = current_user.organization if current_user
     end
 end

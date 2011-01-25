@@ -2,7 +2,7 @@ class DepartmentsController < ApplicationController
   # GET /departments
   # GET /departments.xml
   def index
-    @departments = Department.all
+    @departments = @organization.departments
 
     respond_to do |format|
       format.html # index.html.erb
