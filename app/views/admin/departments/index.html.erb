@@ -1,5 +1,5 @@
 <h1>Departments</h1>
-
+<%= link_to "New Department", new_admin_department_path %>
 <table>
   <tr>
     <th>Name</th>
@@ -9,7 +9,7 @@
 
 <% @departments.each do |department| %>
   <tr>
-    <td><%= department.name %></td>
+    <td><%= department.name %> <span class="highlight">(<%= pluralize(department.users.count, "member") %>)</span></td>
     <td><%= link_to 'Edit', edit_admin_department_path(department) %></td>
     <td><%= link_to 'Remove', admin_department_path(department), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

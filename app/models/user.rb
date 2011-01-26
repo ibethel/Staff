@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
   
   include GAppsProvisioning
   
-  default_scope order: "updated_at DESC"
-  
   has_many :articles
   has_many :friendships
   has_many :friends, through: :friendships

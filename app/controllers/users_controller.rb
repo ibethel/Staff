@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = @organization.users.active.paginate(:page => params[:page], :per_page => 50)
+    @users = @organization.users.active.paginate(:page => params[:page], :per_page => 50, order: "updated_at DESC")
     @title = "Staff"
   end
 

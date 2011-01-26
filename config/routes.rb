@@ -10,12 +10,15 @@ Staff::Application.routes.draw do
   end
   
   namespace :admin do
+    
+    root to: "users#index"
+    
     resources :users
     resources :departments
     resources :awards
   end
   
-  root :to => "users#index"
+  root to: "users#index"
   
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", :as => :signout

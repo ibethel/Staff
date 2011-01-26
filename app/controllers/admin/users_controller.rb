@@ -2,7 +2,7 @@ class Admin::UsersController < AdminController
 
 
   def index
-    @users = @organization.users.active.paginate(:page => params[:page], :per_page => 50)
+    @users = @organization.users.active.order("name ASC").paginate(page: params[:page], per_page: params[:count] || 25)
     @title = "Staff"
   end
   
