@@ -10,9 +10,4 @@ class AwardsController < ApplicationController
   def show
     @award = Award.find(params[:id])
   end
-
-  # GET /awards/1/edit
-  def edit
-    @award = Award.find(params[:id])
-  end
 end

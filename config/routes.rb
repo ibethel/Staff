@@ -1,13 +1,12 @@
 Staff::Application.routes.draw do
-
-  resources :awards
-
+  
   resources :departments do
     resources :users
   end
   
   resources :users do
     resources :articles
+    resources :awards
   end
   
   namespace :admin do
