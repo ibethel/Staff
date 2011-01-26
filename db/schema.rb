@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110126170610) do
+ActiveRecord::Schema.define(:version => 20110126220823) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20110126170610) do
     t.string   "cached_slug"
   end
 
+  add_index "articles", ["cached_slug"], :name => "index_articles_on_cached_slug"
+
   create_table "awards", :force => true do |t|
     t.integer  "organization_id"
     t.string   "name"
@@ -28,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20110126170610) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "awards", ["organization_id"], :name => "index_awards_on_organization_id"
 
   create_table "departments", :force => true do |t|
     t.string   "name"
@@ -37,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20110126170610) do
     t.integer  "organization_id"
   end
 
+  add_index "departments", ["cached_slug"], :name => "index_departments_on_cached_slug"
   add_index "departments", ["organization_id"], :name => "index_departments_on_organization_id"
 
   create_table "friendships", :force => true do |t|
@@ -54,6 +59,8 @@ ActiveRecord::Schema.define(:version => 20110126170610) do
     t.datetime "updated_at"
     t.string   "cached_slug"
   end
+
+  add_index "organizations", ["cached_slug"], :name => "index_organizations_on_cached_slug"
 
   create_table "slugs", :force => true do |t|
     t.string   "name"
@@ -92,6 +99,7 @@ ActiveRecord::Schema.define(:version => 20110126170610) do
     t.boolean  "show_contact_info",  :default => true
   end
 
+  add_index "users", ["cached_slug"], :name => "index_users_on_cached_slug"
   add_index "users", ["organization_id"], :name => "index_users_on_organization_id"
   add_index "users", ["updated_at"], :name => "index_users_on_updated_at"
 
