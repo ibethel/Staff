@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   }
   
   before_save :randomize_file_name
-  before_create { |user| user.activation = UUIDTools::UUID.timestamp_create().to_s }
+  before_create :generate_activation_code
   
   # Build all of the users  
   def self.build_user_list
@@ -59,6 +59,10 @@ class User < ActiveRecord::Base
   
   
   private
+  
+    def generate_activation_code
+       self.activation = UUIDTools::UUID.timestamp_create().to_s
+    end
 
     def randomize_file_name
       if image_file_name_changed?
