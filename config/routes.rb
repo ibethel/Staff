@@ -1,11 +1,19 @@
 Staff::Application.routes.draw do
 
+  resources :awards
+
   resources :departments do
     resources :users
   end
   
   resources :users do
     resources :articles
+  end
+  
+  namespace :admin do
+    resources :users
+    resources :departments
+    resources :awards
   end
   
   root :to => "users#index"

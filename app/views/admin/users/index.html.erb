@@ -1,0 +1,33 @@
+<h1>Users</h1>
+
+<div class="pagination"><%= will_paginate @users %></div>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Department</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.department.name if user.department %></td>
+    <td><%= link_to 'Show', user %></td>
+	<td>
+		<% if current_user.is_admin? && user != current_user && !user.is_admin? %>
+			<%= link_to "Make an admin", new_user_article_path(user), class: "buttons" %>
+		<% elsif current_user.is_admin? && user != current_user && !user.is_admin? %>
+			<%= link_to "Remove admin status", new_user_article_path(user), class: "buttons" %>
+		<% end %>
+	</td>
+    <td><%= link_to "Remove this Account", admin_user_path(user), class: "buttons", :confirm => "This will remove #{user.name}. Are you sure?", :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<div class="pagination"><%= will_paginate @users %></div>
