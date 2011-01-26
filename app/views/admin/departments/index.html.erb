@@ -1,5 +1,6 @@
 <h1>Departments</h1>
 <%= link_to "New Department", new_admin_department_path, class: "right" %>
+<div class="pagination left"><%= will_paginate @departments %></div>
 <table>
   <tr>
     <th>Name</th>
@@ -15,3 +16,4 @@
   </tr>
 <% end %>
 </table>
+<div class="pagination"><%= will_paginate @departments %></div>

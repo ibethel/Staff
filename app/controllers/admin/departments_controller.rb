@@ -2,7 +2,7 @@ class Admin::DepartmentsController < AdminController
   
   
   def index
-    @departments = @organization.departments
+    @departments = @organization.departments.paginate(page: params[:page], per_page: params[:count] || 25)
     @title = "Departments"
   end
 

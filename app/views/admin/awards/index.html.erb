@@ -1,5 +1,6 @@
 <h1>Awards</h1>
 <%= link_to 'New Award', new_admin_award_path, class: "right" %>
+<div class="pagination left"><%= will_paginate @awards %></div>
 <table>
   <tr>
     <th>Name</th>
@@ -15,3 +16,4 @@
   </tr>
 <% end %>
 </table>
+<div class="pagination"><%= will_paginate @awards %></div>

@@ -2,7 +2,7 @@ class Admin::AwardsController < AdminController
 
 
   def index
-    @awards = @organization.awards.all
+    @awards = @organization.awards.paginate(page: params[:page], per_page: params[:count] || 25)
   end
   
   
