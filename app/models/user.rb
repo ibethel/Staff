@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
   }
   
   before_save :randomize_file_name
+  before_create { |user| user.activation = UUIDTools::UUID.timestamp_create().to_s }
   
   # Build all of the users  
   def self.build_user_list
