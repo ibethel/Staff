@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+  
   belongs_to :user
   validates_presence_of :title, :content
   has_friendly_id :title, :use_slug => true
