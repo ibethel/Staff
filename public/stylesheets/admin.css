@@ -258,9 +258,11 @@ input[type=submit]:active {
 #wrapper table {
   background: rgba(255, 255, 255, 0.5);
   border-collapse: collapse;
+  clear: both;
   margin: 20px 0;
   width: 100%;
 }
+#wrapper table tr.admin td { background: rgba(227, 204, 54, 0.2); }
 #wrapper table td {
   border-bottom: 1px solid #e8e8e8;
   margin: 0;
@@ -323,6 +325,7 @@ input[type=submit]:active {
   font-weight: normal;
   padding: 2px;
 }
-#wrapper a:hover { background: #cccccc; }
+#wrapper a:hover { background: #ffffff; }
+#wrapper .buttons:hover { background: #ffffff; }
 #wrapper div.pagination { font-size: 1.1em; }
 #wrapper div.pagination a { font-size: 1.1em; }
