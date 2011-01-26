@@ -27,7 +27,7 @@ class Admin::UsersController < AdminController
   
   
   def update
-    @user = User.find(params[:id])
+    @user = User.within_organization(@organization).find(params[:id])
     @user.admin = !@user.admin if current_user.is_admin?
     
     respond_to do |format|
@@ -41,7 +41,7 @@ class Admin::UsersController < AdminController
   
   
   def destroy
-    @user = User.find(params[:id])
+    @user = User.within_organization(@organization).find(params[:id])
     @user.destroy
 
     respond_to do |format|

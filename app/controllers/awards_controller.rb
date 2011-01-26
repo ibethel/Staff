@@ -8,6 +8,6 @@ class AwardsController < ApplicationController
   # GET /awards/1
   # GET /awards/1.xml
   def show
-    @award = Award.find(params[:id])
+    @award = Award.within_organization(@organization).find(params[:id])
   end
 end

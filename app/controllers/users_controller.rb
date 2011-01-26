@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = User.active.find(params[:id])
+    @user = User.within_organization(@organization).active.find(params[:id])
     @title = @user.name
   end
 
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = User.active.find(params[:id])
+    @user = User.within_organization(@organization).active.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to(profile_path(@user), :notice => "Your profile has been updated") }
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   
   
   def destroy
-    @user = User.find(params[:id])
+    @user = User.within_organization(@organization).find(params[:id])
     
     respond_to do |format|
       if current_user.is_admin?

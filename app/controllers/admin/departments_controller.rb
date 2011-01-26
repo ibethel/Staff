@@ -8,7 +8,7 @@ class Admin::DepartmentsController < AdminController
 
 
   def show
-    @department = Department.find(params[:id])
+    @department = Department.within_organization(@organization).find(params[:id])
     @title = @department.name
   end
 
@@ -19,7 +19,7 @@ class Admin::DepartmentsController < AdminController
 
 
   def edit
-    @department = Department.find(params[:id])
+    @department = Department.within_organization(@organization).find(params[:id])
   end
 
 
@@ -37,7 +37,7 @@ class Admin::DepartmentsController < AdminController
 
 
   def update
-    @department = Department.find(params[:id])
+    @department = Department.within_organization(@organization).find(params[:id])
     @department.organization = @organization
     
     respond_to do |format|

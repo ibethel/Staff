@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
     where(deleted: false)
   }
   
+  scope :within_organization, lambda { |organization|
+    where(organization_id: organization.id)
+  }
+  
   before_save :randomize_file_name
   
   # Build all of the users  

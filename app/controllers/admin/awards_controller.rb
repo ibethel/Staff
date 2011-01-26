@@ -12,7 +12,7 @@ class Admin::AwardsController < AdminController
 
 
   def edit
-    @award = Award.find(params[:id])
+    @award = Award.within_organization(@organization).find(params[:id])
   end
   
   
@@ -31,7 +31,7 @@ class Admin::AwardsController < AdminController
   
   
   def destroy
-    @award = Award.find(params[:id])
+    @award = Award.within_organization(@organization).find(params[:id])
     @award.destroy
     
     redirect_to(admin_awards_path, notice: "The award has been removed")
