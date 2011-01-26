@@ -12,7 +12,10 @@
 		<div id="authentication" class="right">
 			<% if current_user %>
 				<%= link_to "Departments", departments_path %> |
-				<%= link_to "My Account", profile_path(current_user) %> | 
+				<%= link_to "My Account", profile_path(current_user) %> |
+				<% if current_user.is_admin? %>
+					<%= link_to "Admin", admin_root_path %> |
+				<% end %>
 				<%= link_to "Sign Out", signout_path %>
 			<% else %>
 				<%= link_to "Sign in", "/auth/google_apps" %>
