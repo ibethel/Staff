@@ -38,10 +38,11 @@ class Admin::DepartmentsController < AdminController
 
   def update
     @department = Department.find(params[:id])
-
+    @department.organization = @organization
+    
     respond_to do |format|
       if @department.update_attributes(params[:department])
-        format.html { redirect_to(@department, :notice => 'Department was successfully updated.') }
+        format.html { redirect_to(admin_departments_path, :notice => 'Department was successfully updated.') }
       else
         format.html { render :action => "edit" }
       end
