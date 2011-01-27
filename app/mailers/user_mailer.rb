@@ -3,8 +3,8 @@ class UserMailer < ActionMailer::Base
   
   def activation(user)
       @user = user
-      @url  = user_activation_path(user)
+      @url  = user_activation_path(user.activation)
       mail(:to => user.email,
-           :subject => "You have been invited")
+           :subject => "It's a party.  You are invited!")
     end
 end

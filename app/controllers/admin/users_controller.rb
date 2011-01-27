@@ -18,6 +18,7 @@ class Admin::UsersController < AdminController
     
     respond_to do |format|
       if @user.save(validate: false)
+        UserMailer.activation(@user).deliver
         format.html { redirect_to(admin_users_path, :notice => "The user has been created and notified") }
       else
         format.html { render :action => "new" }
