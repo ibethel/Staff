@@ -36,6 +36,7 @@ div#wrapper #logo { margin-top: 10px; }
 div#wrapper #logo a { outline: none; }
 div#wrapper div#authentication {
   color: #999999;
+  font-size: 0.8em;
   margin-top: 15px;
   text-align: right;
 }
@@ -251,7 +252,7 @@ input[type=submit]:active {
   color: #000000;
 }
 #wrapper {
-  background: rgba(255, 255, 255, 0.3);
+  background: #ffffff;
   font-size: 0.8em;
   padding: 10px;
 }
